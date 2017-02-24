@@ -9,7 +9,7 @@ var MongoStore = require('connect-mongo')(session);
 
 var app = express();
 
-mongoose.connect('mongodb://liocalhost/rateme');
+mongoose.connect('mongodb://localhost/rateme');
 
 app.use(express.static('public'));
 app.engine('ejs', engine);
