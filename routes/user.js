@@ -1,5 +1,5 @@
 
-module.exports = (app) => {
+module.exports = (app, passport) => {
   app.get('/', (req, res, next) =>{
     res.render('index',{title: 'Index || RateMe'});
   });

@@ -32,11 +32,11 @@ app.use(session({
 
 app.use(flash());
 
-app.use(passport.initalize());
+app.use(passport.initialize());
 app.use(passport.session());
 
 
-require('./routes/user')(app);
+require('./routes/user')(app, passport);
 
 app.listen(3000, function(){
   console.log("app running on port 3000");

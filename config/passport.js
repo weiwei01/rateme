@@ -1,7 +1,7 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-var User = requrire('../models/user');
+var User = require('../models/user');
 
 passport.serializeUser((user, done) =>{
   done(null, user.id);
@@ -30,9 +30,9 @@ passport.use('local.signup', new LocalStrategy({
     var newUser = new User();
     newUser.fullname = req.body.fullname;
     newUser.email = req.body.email;
-    newUser.password = req.body.password(req.bodypassword);
+    newUser.password = newUser.encryptPassword(req.bodypassword);
 
-    newuser.save((err) => {
+    newUser.save((err) => {
       return done(null, newUser);
     });
   })
